@@ -1,0 +1,18 @@
+# Ignore all node_modules folders
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Ignore all environment configurations
+.env
+*.env
+client/.env
+server/.env
+
+# Ignore all file uploads except gitkeep placeholder
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Ignore build output
+client/dist/
+dist/

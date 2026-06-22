@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  --accent: #14b8a6;
+  --accent-strong: #0f766e;
+  --accent-soft: rgba(20, 184, 166, 0.16);
+  --accent-shadow: rgba(20, 184, 166, 0.28);
+  --app-shell: #dfe7f1;
+  --app-frame: #ffffff;
+  --sidebar-top: #f7f9fc;
+  --sidebar-bottom: #f2f5f9;
+  --chat-top: #e9eff5;
+  --chat-bottom: #eef3f8;
+  --panel-bg: #ffffff;
+  --surface-soft: #eef2f7;
+  --surface-card: #ffffff;
+  --surface-elevated: rgba(255, 255, 255, 0.96);
+  --search-bg: #ffffff;
+  --search-border: rgba(59, 130, 246, 0.4);
+  --header-bg: rgba(255, 255, 255, 0.88);
+  --composer-bg: rgba(255, 255, 255, 0.92);
+  --composer-input-bg: #ffffff;
+  --incoming-bubble: rgba(255, 255, 255, 0.94);
+  --incoming-bubble-border: rgba(203, 213, 225, 0.9);
+  --menu-surface: rgba(255, 255, 255, 0.98);
+  --bubble-me: linear-gradient(135deg, #14b8a6, #0f766e);
+  --line: rgba(148, 163, 184, 0.26);
+  --line-strong: rgba(148, 163, 184, 0.34);
+  --chat-card-active: rgba(59, 130, 246, 0.14);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --chat-bg: #e7ebf0;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --app-shell: #0e1621;
+  --app-frame: #17212b;
+  --sidebar-top: #17212b;
+  --sidebar-bottom: #17212b;
+  --chat-top: #0e1621;
+  --chat-bottom: #0e1621;
+  --panel-bg: #17212b;
+  --surface-soft: #1f2c3a;
+  --surface-card: #17212b;
+  --surface-elevated: #1f2c3a;
+  --search-bg: #202b36;
+  --search-border: rgba(59, 130, 246, 0.9);
+  --header-bg: #17212b;
+  --composer-bg: #17212b;
+  --composer-input-bg: #202b36;
+  --incoming-bubble: #182533;
+  --incoming-bubble-border: rgba(82, 100, 120, 0.55);
+  --menu-surface: #202b36;
+  --line: rgba(148, 163, 184, 0.16);
+  --line-strong: rgba(148, 163, 184, 0.24);
+  --chat-card-active: rgba(45, 136, 255, 0.22);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --chat-bg: #0f172a;
+}
+
+:root[data-theme="system"] {
+  color-scheme: light dark;
+}
+
+:root[data-accent="blue"] {
+  --accent: #3b82f6;
+  --accent-strong: #1d4ed8;
+  --accent-soft: rgba(59, 130, 246, 0.16);
+  --accent-shadow: rgba(59, 130, 246, 0.28);
+  --bubble-me: linear-gradient(135deg, #60a5fa, #2563eb);
+}
+
+:root[data-accent="sunset"] {
+  --accent: #f59e0b;
+  --accent-strong: #c2410c;
+  --accent-soft: rgba(245, 158, 11, 0.18);
+  --accent-shadow: rgba(245, 158, 11, 0.28);
+  --bubble-me: linear-gradient(135deg, #fbbf24, #f97316);
+}
+
+:root[data-accent="rose"] {
+  --accent: #f43f5e;
+  --accent-strong: #be123c;
+  --accent-soft: rgba(244, 63, 94, 0.16);
+  --accent-shadow: rgba(244, 63, 94, 0.24);
+  --bubble-me: linear-gradient(135deg, #fb7185, #e11d48);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--app-shell);
+  color: var(--text-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.35);
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Telegram Web style wallpaper pattern */
+.chat-pattern {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+:root[data-theme="dark"] .chat-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 0);
+}
+
+/* Custom scrollbar adjustments for a cleaner Telegram-like look */
+.chat-messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+:root[data-theme="dark"] .chat-messages-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
